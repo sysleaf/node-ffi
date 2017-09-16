@@ -7,7 +7,7 @@ environment:
     secure: +sj7OXL7RukrPAiMlfe9p3QE6sMpLnHufj6CYoNzUF+/fK9Ik/EmOjY9SxvBuROf
   matrix:
     - nodejs_version: "8"
-    - nodejs_version: "6.11"
+#    - nodejs_version: "6.11"
 
 platform:
 #  - x86
