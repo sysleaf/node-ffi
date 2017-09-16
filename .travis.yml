@@ -34,3 +34,12 @@ script:
   - npm --version
   # Run tests
   - npm test
+
+SET NODE_PRE_GYP_GITHUB_TOKEN=aaef4f5d3c63bcc37b57e9eecea5f4c3c8415aa6
+export NODE_PRE_GYP_GITHUB_TOKEN=aaef4f5d3c63bcc37b57e9eecea5f4c3c8415aa6
+
+npm install --build-from-source
+./node_modules/.bin/node-pre-gyp package
+node-pre-gyp-github publish --release
+node-pre-gyp-github publish
+
