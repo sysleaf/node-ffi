@@ -16,10 +16,10 @@ platform:
 install:
   - ps: Install-Product node $env:nodejs_version
   - npm install --build-from-source=myapp --msvs_version=%MSVS_VERSION%
-  SET CM=%APPVEYOR_REPO_COMMIT_MESSAGE%
-  if not "%CM%" == "%CM:[publish binary]=%" node-pre-gyp-github --msvs_version=2013 publish
+#  SET CM=%APPVEYOR_REPO_COMMIT_MESSAGE%
+#  if not "%CM%" == "%CM:[publish binary]=%" node-pre-gyp-github --msvs_version=2013 publish
 
-#  - ps: if($env:APPVEYOR_REPO_COMMIT_MESSAGE.ToLower().Contains('[publish binary]')) { node-pre-gyp-github --msvs_version=2013 publish }
+  - ps: if($env:APPVEYOR_REPO_COMMIT_MESSAGE.ToLower().Contains('[publish binary]')) { node-pre-gyp-github --msvs_version=2013 publish }
 
 test_script:
   - node --version
