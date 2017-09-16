@@ -41,7 +41,6 @@
   ],
   "scripts": {
     "test": "node-gyp rebuild --directory test",
-    "preinstall": "npm install -g node-pre-gyp-github",
     "install": "node-pre-gyp install --fallback-to-build"
   },
   "binary": {
