@@ -5,7 +5,7 @@ environment:
   MSVS_VERSION: 2013
   NODE_PRE_GYP_GITHUB_TOKEN: "aaef4f5d3c63bcc37b57e9eecea5f4c3c8415aa6"
   matrix:
-    - nodejs_version: "8.5"
+    - nodejs_version: "8"
     - nodejs_version: "6.11"
 
 platform:
@@ -15,7 +15,7 @@ platform:
 
 install:
   - ps: Install-Product node $env:nodejs_version
-  - npm install --build-from-source=myapp=ref --build-from-source=ffi --msvs_version=%MSVS_VERSION%
+  - npm install --build-from-source=myapp --msvs_version=%MSVS_VERSION%
   - ps: if($env:APPVEYOR_REPO_COMMIT_MESSAGE.ToLower().Contains('[publish binary]')) { node-pre-gyp-github --msvs_version=2013 publish }
 
 test_script:
