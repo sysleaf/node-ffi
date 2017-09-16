@@ -6,16 +6,16 @@ environment:
   NODE_PRE_GYP_GITHUB_TOKEN:
     secure: +sj7OXL7RukrPAiMlfe9p3QE6sMpLnHufj6CYoNzUF+/fK9Ik/EmOjY9SxvBuROf
   matrix:
-    - nodejs_version: "8"
+#    - nodejs_version: "8"
     - nodejs_version: "6.11"
 
 platform:
-  - x86
+#  - x86
   - x64
 
 
 install:
-  - ps: Install-Product node $env:nodejs_version
+  - ps: Install-Product node $env:nodejs_version $env:platform
   - npm install -g node-pre-gyp-github
   - npm install -g node-pre-gyp
   - npm install --build-from-source --msvs_version=%MSVS_VERSION%
