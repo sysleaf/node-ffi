@@ -11,12 +11,8 @@ addons:
       - g++-4.8
 env:
   matrix:
-    - TRAVIS_NODE_VERSION="0.10"
-    - TRAVIS_NODE_VERSION="0.12"
-    - TRAVIS_NODE_VERSION="4.1"
-    - TRAVIS_NODE_VERSION="5.1"
-    - TRAVIS_NODE_VERSION="6"
-    - TRAVIS_NODE_VERSION="7"
+    - TRAVIS_NODE_VERSION="8"
+    - TRAVIS_NODE_VERSION="6.11"
 
 install:
   - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
@@ -29,10 +25,8 @@ install:
   - npm install
 
 script:
-  # Output useful info for debugging
   - node --version
   - npm --version
-  # Run tests
   - npm test
 
 SET NODE_PRE_GYP_GITHUB_TOKEN=aaef4f5d3c63bcc37b57e9eecea5f4c3c8415aa6
