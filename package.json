@@ -37,7 +37,8 @@
     "ref-array": "1"
   },
   "bundledDependencies": [
-    "node-pre-gyp"
+    "node-pre-gyp",
+    "node-pre-gyp-github"
   ],
   "scripts": {
     "test": "node-gyp rebuild --directory test",
