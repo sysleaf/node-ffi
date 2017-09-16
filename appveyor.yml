@@ -3,7 +3,8 @@
 
 environment:
   MSVS_VERSION: 2013
-  NODE_PRE_GYP_GITHUB_TOKEN: "5fe6576bb06777e28d8365d4cfc15801f8b8e4e3"
+  NODE_PRE_GYP_GITHUB_TOKEN:
+    secure: +sj7OXL7RukrPAiMlfe9p3QE6sMpLnHufj6CYoNzUF+/fK9Ik/EmOjY9SxvBuROf
   matrix:
 #    - nodejs_version: "8"
     - nodejs_version: "6.11"
